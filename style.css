@@ -1,0 +1,838 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#08090d;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    padding-bottom:30px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    height:70px;
+    padding:0 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0d0e13;
+    border-bottom:1px solid #22232c;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:800;
+}
+
+.logo span{
+    color:#9b6cff;
+}
+
+.header-text{
+    color:#777;
+    font-size:10px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    text-align:center;
+    padding:75px 20px 60px;
+
+    background:
+        radial-gradient(
+            circle,
+            #241548,
+            #08090d 65%
+        );
+}
+
+.hero-icon{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(
+        32px,
+        7vw,
+        55px
+    );
+
+    margin-bottom:17px;
+}
+
+.hero h1 span{
+    color:#9b6cff;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    color:#85858f;
+    line-height:1.7;
+    font-size:14px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    max-width:1100px;
+    margin:auto;
+    padding:35px 5%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+}
+
+.feature{
+    padding:25px 15px;
+    text-align:center;
+
+    background:#111219;
+
+    border:
+        1px solid #252630;
+
+    border-radius:16px;
+}
+
+.feature-icon{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.feature h3{
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+.feature p{
+    color:#777;
+    font-size:11px;
+    line-height:1.6;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.products-section,
+.request{
+    max-width:1150px;
+    margin:auto;
+    padding:70px 5%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-heading h2{
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.section-heading p{
+    color:#777;
+    font-size:12px;
+}
+
+.request-icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search{
+    max-width:600px;
+    margin:0 auto 15px;
+}
+
+.search input{
+    width:100%;
+    padding:14px 17px;
+
+    background:#111219;
+    color:white;
+
+    border:
+        1px solid #292b35;
+
+    border-radius:10px;
+
+    outline:none;
+}
+
+.search input:focus{
+    border-color:#8b5cf6;
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:30px;
+}
+
+.filter{
+    border:1px solid #292b35;
+    background:#111219;
+    color:#999;
+
+    padding:
+        9px 20px;
+
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.filter.active{
+    background:#8b5cf6;
+    color:white;
+    border-color:#8b5cf6;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.product{
+    overflow:hidden;
+
+    background:#111219;
+
+    border:
+        1px solid #252630;
+
+    border-radius:18px;
+
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-4px);
+    border-color:#704dd1;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover-box{
+    position:relative;
+    aspect-ratio:1/1;
+
+    background:#15151d;
+
+    overflow:hidden;
+}
+
+.cover{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.cover:hover{
+    transform:scale(1.03);
+}
+
+
+/* BADGE */
+
+.badge{
+    position:absolute;
+
+    top:12px;
+    left:12px;
+
+    padding:
+        7px 11px;
+
+    border-radius:20px;
+
+    background:
+        rgba(0,0,0,.75);
+
+    font-size:10px;
+    font-weight:bold;
+}
+
+.badge.flm{
+    color:#8dc8ff;
+}
+
+.badge.flp{
+    color:#b696ff;
+}
+
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.product-info{
+    padding:17px;
+}
+
+.product-info h3{
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.price{
+    color:#a98cff;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.sold{
+    color:#666;
+    font-size:11px;
+    margin-top:5px;
+}
+
+
+/* BUTTONS */
+
+.product-buttons{
+    display:flex;
+    gap:7px;
+    margin-top:15px;
+}
+
+.preview-button,
+.buy-button{
+    flex:1;
+
+    padding:11px 5px;
+
+    border-radius:9px;
+
+    font-size:11px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.preview-button{
+    background:#1b1c24;
+    color:#ddd;
+
+    border:
+        1px solid #30313b;
+}
+
+.buy-button{
+    background:#8b5cf6;
+    color:white;
+    border:0;
+}
+
+
+/* =========================
+   REQUEST
+========================= */
+
+.request-box{
+    max-width:600px;
+    margin:auto;
+
+    padding:25px;
+
+    background:#111219;
+
+    border:
+        1px solid #252630;
+
+    border-radius:17px;
+}
+
+.request-box label{
+    display:block;
+
+    color:#aaa;
+
+    font-size:12px;
+
+    margin:
+        14px 0 7px;
+}
+
+.request-box input,
+.request-box select{
+    width:100%;
+
+    padding:13px;
+
+    background:#08090d;
+
+    color:white;
+
+    border:
+        1px solid #292b35;
+
+    border-radius:9px;
+
+    outline:none;
+}
+
+#requestButton{
+    width:100%;
+
+    margin-top:20px;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:9px;
+
+    background:#8b5cf6;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+
+/* ==================================================
+   IPHONE STYLE MUSIC PLAYER
+================================================== */
+
+.music-player{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:
+        55px 25px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #242729,
+            #111414
+        );
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:scale(.97);
+
+    transition:
+        opacity .3s,
+        transform .3s;
+
+    overflow-y:auto;
+}
+
+.music-player.open{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:scale(1);
+}
+
+
+/* CLOSE */
+
+.player-close{
+
+    position:absolute;
+
+    top:20px;
+    left:20px;
+
+    width:40px;
+    height:40px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.1);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+
+/* COVER */
+
+.player-cover-area{
+
+    width:
+        min(82vw,390px);
+
+    aspect-ratio:1/1;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.45);
+
+    background:#222;
+
+}
+
+.player-cover-area img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* TITLE */
+
+.player-title-area{
+
+    width:
+        min(82vw,390px);
+
+    margin-top:24px;
+
+}
+
+.player-title{
+
+    font-size:23px;
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+.player-artist{
+
+    margin-top:5px;
+
+    font-size:16px;
+
+    color:#999;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-container{
+
+    width:
+        min(82vw,390px);
+
+    margin-top:25px;
+}
+
+#progress{
+
+    width:100%;
+
+    height:5px;
+
+    accent-color:#fff;
+
+    cursor:pointer;
+}
+
+.time-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#aaa;
+
+    font-size:11px;
+
+    margin-top:7px;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.player-controls{
+
+    width:
+        min(82vw,390px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-around;
+
+    margin-top:20px;
+}
+
+.player-controls button{
+
+    background:none;
+
+    border:0;
+
+    color:white;
+
+    font-size:38px;
+
+    cursor:pointer;
+}
+
+.player-controls .play-pause{
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#171919;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+}
+
+
+/* =========================
+   VOLUME
+========================= */
+
+.volume{
+
+    width:
+        min(82vw,390px);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:20px;
+
+    color:#aaa;
+}
+
+.volume input{
+
+    flex:1;
+
+    accent-color:#aaa;
+}
+
+
+/* DEVICE */
+
+.device{
+
+    margin-top:22px;
+
+    padding:
+        10px 18px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.1);
+
+    color:#ddd;
+
+    font-size:12px;
+
+    display:flex;
+
+    gap:12px;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:25px;
+
+    transform:
+        translate(-50%,30px);
+
+    padding:
+        12px 18px;
+
+    background:#22242a;
+
+    border:
+        1px solid #444;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:7000;
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:
+        translate(-50%,0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .features{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .products{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:550px){
+
+    .header-text{
+        display:none;
+    }
+
+    .hero{
+        padding-top:60px;
+    }
+
+    .products{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .player-cover-area{
+
+        width:
+            min(82vw,360px);
+
+    }
+
+    .player-title-area,
+    .progress-container,
+    .player-controls,
+    .volume{
+
+        width:
+            min(82vw,360px);
+
+    }
+
+}
